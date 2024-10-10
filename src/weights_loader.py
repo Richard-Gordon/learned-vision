@@ -1,6 +1,7 @@
+import os
 import torch
 from torchvision import models
-import os
+
 
 def load_weights(dir_name='./data/weights') -> dict:
     """ Load available model weights in the specified directory """
@@ -9,7 +10,7 @@ def load_weights(dir_name='./data/weights') -> dict:
         if filename.endswith('.pt'):
             model_name = filename.split('.')[0]
             module = torch.load(f'{dir_name}/{filename}', weights_only=True)
-            weights[model_name] = module['weight']
+            weights[model_name] = module['weight'].numpy()
     return weights
 
 
