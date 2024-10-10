@@ -1,2 +1,2 @@
-# inception-circuits
-Exploring functional circuits in Inception V1
+# learned-vision
+Exploring the learned weights of vision CNNs
